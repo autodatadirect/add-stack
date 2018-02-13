@@ -1,0 +1,5 @@
+--colors
+--webpack-config webpack.config-test.babel.js
+--exit
+-R mocha-spectrum-reporter
+app/**/*.test.js
