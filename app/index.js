@@ -10,7 +10,7 @@ import routes from './routes'
 export const store = configureStore()
 startSagas()
 
-const mapRouteToRouteComponent = r => <Route {...r} />
+const mapRouteToRouteComponent = r => <Route {...r} key={r.path} />
 
 ReactDOM.render(<div>
   <Provider store={store}>
