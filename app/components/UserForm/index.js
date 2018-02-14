@@ -1,5 +1,5 @@
 import { Field } from 'redux-form'
-import { FormGroup, Label, Button } from 'reactstrap'
+import { FormGroup, Button } from 'reactstrap'
 import { required } from '../../utils/validation'
 import InputField from '../InputField'
 import PropTypes from 'prop-types'
@@ -16,7 +16,6 @@ const UserForm = ({user, loading, handleSubmit}) => {
   return (
     <form key={user.id} onSubmit={handleSubmit(submit)}>
       <FormGroup className='update-employee-group'>
-        <Label>User Update</Label>
         <Field name='id' type='text' label='User Id' component={InputField} validate={[required]} />
         <Field name='date' type='date' label='Last Updated' component={InputField} validate={[required]} />
         <Field name='firstName' type='text' label='First Name' component={InputField} validate={[required]} />
