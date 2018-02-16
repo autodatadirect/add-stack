@@ -7,6 +7,5 @@ export default function * refreshManifestData () {
 }
 
 function * focusRowFetchUser (action) {
-  // yield put(fetchUser(action.id))
   console.log('Focus row called')
 }

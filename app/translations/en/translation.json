@@ -1,0 +1,16 @@
+{
+  "UserForm": {
+    "userId": "User Id",
+    "date": "Last Updated",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "age": "Age",
+    "phone": "Phone Number",
+    "address": "Address",
+    "update": "UPDATE",
+    "cancel": "Cancel"
+  },
+  "LoadingIcon": {
+    "loading": "Loading"
+  }
+}

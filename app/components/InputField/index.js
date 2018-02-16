@@ -41,7 +41,10 @@ const InputField = props => {
 InputField.propTypes = {
   className: PropTypes.string,
   id: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   input: PropTypes.object.isRequired,
   placeholder: PropTypes.string,
   type: PropTypes.string,

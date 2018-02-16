@@ -38,7 +38,8 @@ module.exports = {
       {test: /\.(scss)$/, loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!sass-loader'})},
       {test: /\.(css)$/, loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})},
       {test: /\.(png|jpg|gif|eot|ttf|woff|svg|woff2)(\?.*)?$/, loader: 'url-loader?limit=1000&name=img/[name]-[hash].[ext]'},
-      {test: /\.font\.(js|json)$/, loader: 'style-loader!css-loader!fontgen-loader?embed'}
+      {test: /\.font\.(js|json)$/, loader: 'style-loader!css-loader!fontgen-loader?embed'},
+      {test: /\.js$/, loaders: ['i18next-resource-store-loader'], include: path.join(__dirname, './app/translations')}
     ]
   },
 

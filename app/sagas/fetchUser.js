@@ -1,5 +1,4 @@
 import { put, takeLatest } from 'redux-saga/effects'
-import { delay } from 'redux-saga'
 import * as types from '../constants/actionTypes'
 import { setUser } from '../actions/userActions'
 import service from '../service/fetchUser'

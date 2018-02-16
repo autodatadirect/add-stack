@@ -1,5 +1,7 @@
 module.exports = {
     'files': [
+      './images/account.svg',
+      './images/close.svg'
     ],
     'fontName': 'stackicons',
     'classPrefix': 'stackicon-',
