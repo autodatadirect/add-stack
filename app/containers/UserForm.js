@@ -2,7 +2,7 @@ import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import { compose, lifecycle } from 'recompose'
 import { bindActionCreators } from 'redux'
-import get from 'lodash-es/get'
+import get from '../utils/get'
 
 import * as actions from '../actions/userActions'
 import UserForm from '../components/UserForm'

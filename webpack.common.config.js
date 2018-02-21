@@ -1,6 +1,5 @@
 var path = require('path')
 var EncodingPlugin = require('webpack-encoding-plugin')
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var encodingPlugin = new EncodingPlugin({
@@ -46,7 +45,6 @@ module.exports = {
   plugins: [
     encodingPlugin,
     watcherMessagePlugin,
-    new LodashModuleReplacementPlugin({ 'paths': true }),
     new ExtractTextPlugin('style-[hash].css')
   ]
 }

@@ -16,8 +16,5 @@ export default {
   },
   plugins: [new ExtractTextPlugin('style-[hash].css')],
   resolve: {
-    alias: {
-      'lodash-es': path.join(__dirname, '/node_modules/lodash/')
-    }
   }
 }

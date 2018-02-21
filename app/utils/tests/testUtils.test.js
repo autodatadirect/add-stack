@@ -1,6 +1,7 @@
 import expect from 'expect'
-import isFunction from 'lodash-es/isFunction'
 import * as tools from '../testUtils.js'
+
+const isFunction = fn => typeof fn === 'function'
 
 describe('testUtils', () => {
   let tool
