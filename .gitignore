@@ -11,3 +11,4 @@ node_modules
 node/
 npm-debug.log
 *.http
+stats.json
