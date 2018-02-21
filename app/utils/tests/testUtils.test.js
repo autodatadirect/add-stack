@@ -1,5 +1,5 @@
 import expect from 'expect'
-import isFunction from 'lodash/isFunction'
+import isFunction from 'lodash-es/isFunction'
 import * as tools from '../testUtils.js'
 
 describe('testUtils', () => {

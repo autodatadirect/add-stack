@@ -1,4 +1,6 @@
-import { isString, isArray, isFunction } from 'lodash'
+import isString from 'lodash-es/isString'
+import isArray from 'lodash-es/isArray'
+import isFunction from 'lodash-es/isFunction'
 
 export function translateComponent (componentName) {
   if (!isString(componentName) || componentName.length === 0) throw new Error('translateComponent requires valid `componentName` argument.')
