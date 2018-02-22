@@ -1,25 +1,6 @@
-import Chance from 'chance'
+import data from './mockData'
 
-const chance = new Chance()
-export const count = 13488
-let data
-
-const computeRow = index => ({
-  id: index,
-  date: chance.date().valueOf(),
-  firstName: chance.first(),
-  lastName: chance.last(),
-  age: chance.age(),
-  phone: chance.phone(),
-  address: chance.address()
-})
-
-const buildData = () => {
-  data = []
-  for (let i = 0; i < count; i++) {
-    data.push(computeRow(i))
-  }
-}
+export const count = 100
 
 const sorter = id => (a, b) => {
   var nameA = a[id]
@@ -55,7 +36,6 @@ const sortData = sorts => {
 }
 
 const compileResult = filter => {
-  if (!data) buildData()
   sortData(filter.sorts)
   return {
     data: fetchPage(filter),
@@ -64,8 +44,5 @@ const compileResult = filter => {
 }
 
 export default request => new Promise((resolve, reject) => {
-  if (chance.integer({min: 0, max: 100}) > 98) {
-    reject(new Error('Service Failure'))
-  }
   resolve(compileResult(request.data.filter))
 })
