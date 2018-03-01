@@ -1,7 +1,7 @@
-const PREFIX = '/arc'
+const PREFIX = '/addstack'
 const buildUrl = url => PREFIX + url
-export const STATUS = buildUrl('/addstack/status')
+export const STATUS = buildUrl('/status')
 
-export const MANIFEST_DATA = buildUrl('/addstack/api/manifest')
+export const MANIFEST_DATA = buildUrl('/api/manifest')
 
-export const FETCH_USER = buildUrl('/addstack/api/user')
+export const FETCH_USER = buildUrl('/api/user')

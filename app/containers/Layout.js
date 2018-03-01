@@ -7,7 +7,7 @@ import {withRouter} from 'react-router'
 
 const mapStateToProps = (state, props) => {
   return {
-    runlevel: state.layout.addtagRunlevel
+    runlevel: state.layout.runlevel
   }
 }
 
