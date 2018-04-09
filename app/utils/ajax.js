@@ -1,7 +1,7 @@
 import * as RUNLEVELS from '../constants/runlevels'
 import getRunLevel from './getRunlevel'
 
-function checkStatus (response) {
+const checkStatus = response => {
   if (response.status >= 200 && response.status < 300) {
     return response
   } else {
@@ -11,16 +11,14 @@ function checkStatus (response) {
   }
 }
 
-function getQueryString (params) {
-  if (!params) {
-    return
-  }
+const getQueryString = params => {
+  if (!params) return
   return Object.keys(params)
     .map(k => window.encodeURIComponent(k) + '=' + window.encodeURIComponent(params[k]))
     .join('&')
 }
 
-function buildHeaders (response) {
+const buildHeaders = response => {
   const headers = {}
   const headersIterator = response.headers.entries()
   let header = headersIterator.next()
@@ -31,7 +29,7 @@ function buildHeaders (response) {
   return headers
 }
 
-function send (request) {
+const send = request => {
   const runlevel = getRunLevel()
   if (runlevel === RUNLEVELS.MOCK) {
     return request.mock(request)

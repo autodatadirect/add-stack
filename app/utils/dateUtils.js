@@ -5,18 +5,10 @@ export const DATE_DISPLAY_FORMAT_NO_TIME = 'M/D/YYYY'
 export const DATE_DISPLAY_FORMAT_WITH_SECONDS = 'M/D/YYYY h:mm:ss a'
 export const DATE_DISPLAY_FORMAT_NO_TIME_FIELD = 'YYYY-MM-DD'
 
-export const formatDate = (date) => {
-  return format(date, DATE_DISPLAY_FORMAT_NO_TIME)
-}
+export const formatDate = date => format(date, DATE_DISPLAY_FORMAT_NO_TIME)
 
-export const formatDateTime = (datetime) => {
-  return format(datetime, DATE_DISPLAY_FORMAT)
-}
+export const formatDateTime = datetime => format(datetime, DATE_DISPLAY_FORMAT)
 
-export const formatDateTimeWithSeconds = (datetime) => {
-  return format(datetime, DATE_DISPLAY_FORMAT_WITH_SECONDS)
-}
+export const formatDateTimeWithSeconds = datetime => format(datetime, DATE_DISPLAY_FORMAT_WITH_SECONDS)
 
-export const formatDateForField = (date) => {
-  return format(date, DATE_DISPLAY_FORMAT_NO_TIME_FIELD)
-}
+export const formatDateForField = date => format(date, DATE_DISPLAY_FORMAT_NO_TIME_FIELD)

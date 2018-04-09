@@ -5,15 +5,9 @@ import PropTypes from 'prop-types'
 import './index.scss'
 
 const decodeValidationStatus = ({ touched, error, warning }) => {
-  if (!touched) {
-    return
-  }
-  if (error) {
-    return 'error'
-  }
-  if (warning) {
-    return 'warning'
-  }
+  if (!touched) return
+  if (error) return 'error'
+  if (warning) return 'warning'
 }
 
 const renderHelp = ({ touched, error, warning }) => {
@@ -23,20 +17,17 @@ const renderHelp = ({ touched, error, warning }) => {
   return null
 }
 
-const InputField = props => {
-  return (
-    <FormGroup className={props.className} controlId={props.id} validationState={decodeValidationStatus(props.meta)}>
-      <Label>{props.label}</Label>
-      <Input
-        {...props.input}
-        placeholder={props.placeholder}
-        componentClass='input'
-        type={props.type}
-        {...props} />
-      {renderHelp(props.meta)}
-    </FormGroup>
-  )
-}
+const InputField = props =>
+  <FormGroup className={props.className} controlId={props.id} validationState={decodeValidationStatus(props.meta)}>
+    <Label>{props.label}</Label>
+    <Input
+      {...props.input}
+      placeholder={props.placeholder}
+      componentClass='input'
+      type={props.type}
+      {...props} />
+    {renderHelp(props.meta)}
+  </FormGroup>
 
 InputField.propTypes = {
   className: PropTypes.string,
