@@ -9,18 +9,15 @@ export const testContainerProps = {
   }
 }
 
-export const getTestPromise = (fail) => {
-  return new Promise((resolve, reject) => {
+export const getTestPromise = fail =>
+  new Promise((resolve, reject) => {
     if (fail) {
       return reject.error()
     }
-
     return resolve()
   })
-}
 
-export const getPromiseSpy = (fail) => {
-  return expect
+export const getPromiseSpy = fail =>
+  expect
     .createSpy()
     .andReturn(getTestPromise(fail))
-}

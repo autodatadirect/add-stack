@@ -1,15 +1,13 @@
 import Layout from '../components/Layout'
-import {compose, withHandlers, lifecycle} from 'recompose'
+import {compose, lifecycle} from 'recompose'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {setRunlevel, initializeRunlevel} from '../actions/layoutActions'
 import {withRouter} from 'react-router'
 
-const mapStateToProps = (state, props) => {
-  return {
-    runlevel: state.layout.runlevel
-  }
-}
+const mapStateToProps = (state, props) => ({
+  runlevel: state.layout.runlevel
+})
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
@@ -17,12 +15,6 @@ const mapDispatchToProps = dispatch => (
     initializeRunlevel: initializeRunlevel
   }, dispatch)
 )
-
-const handlers = {
-  onRunlevelChange: props => event => {
-    props.setRunlevel(event.target.value)
-  }
-}
 
 const lifecycleMethods = {
   componentWillMount () {
@@ -33,7 +25,6 @@ const lifecycleMethods = {
 const enhance = compose(
   withRouter,
   connect(mapStateToProps, mapDispatchToProps),
-  withHandlers(handlers),
   lifecycle(lifecycleMethods)
 )
 

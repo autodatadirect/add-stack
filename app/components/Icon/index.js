@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 
 import './index.scss'
 
-const Icon = ({type}) => {
-  return (<span className={'stackicon stackicon-' + type} />)
-}
+const Icon = ({type}) => <span className={'stackicon stackicon-' + type} />
 
 Icon.propTypes = {
   type: PropTypes.string.isRequired

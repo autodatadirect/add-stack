@@ -1,7 +1,8 @@
 import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
-import { compose, lifecycle } from 'recompose'
+import { compose, lifecycle, branch } from 'recompose'
 import { bindActionCreators } from 'redux'
+import LoadingIcon from '../components/LoadingIcon'
 import get from '../utils/get'
 
 import * as actions from '../actions/userActions'
@@ -34,7 +35,8 @@ const lifecycleMethods = {
 const enhance = compose(
   connect(mapStateToProps, mapDispatchToProps),
   reduxForm({ form: formName }),
-  lifecycle(lifecycleMethods)
+  lifecycle(lifecycleMethods),
+  branch(props => props.loading, () => LoadingIcon)
 )
 
 export default enhance(UserForm)
