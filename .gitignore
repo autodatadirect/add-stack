@@ -1,14 +1,7 @@
-.classpath
-.project
-.settings
-bin
-target
-.idea
-*.iml
 .vscode/
-keystore
-node_modules
 node/
+node_modules/
+/test/results
 npm-debug.log
-*.http
+.tmp/
 stats.json

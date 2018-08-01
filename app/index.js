@@ -1,34 +1,21 @@
 import '../addfont.font'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {HashRouter, Route} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 import {Provider} from 'react-redux'
+import Layout from './components/Layout'
 
-import Layout from './containers/Layout'
+import store from './store'
+import './service'
+import './sagas'
 
-import configureStore from './store'
-import startSagas from './sagas'
-import routes from './routes'
-
-import i18next from 'i18next'
-import translations from './translations'
-import { setTranslator } from './utils/translate'
-
-export const store = configureStore()
-
-i18next.init({lng: 'en', resources: translations})
-setTranslator(i18next.t.bind(i18next))
-
-startSagas()
-
-const mapRouteToRouteComponent = r => <Route {...r} key={r.path} />
+import { initTranslator } from './utils/translate'
+initTranslator()
 
 ReactDOM.render(<div>
   <Provider store={store}>
     <HashRouter>
-      <Layout>
-        {routes.map(mapRouteToRouteComponent)}
-      </Layout>
+      <Layout />
     </HashRouter>
   </Provider>
 </div>, document.getElementById('app'))

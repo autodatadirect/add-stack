@@ -4,7 +4,7 @@ var webpack = require('webpack')
 var BundleCleaner = require('webpack-clean-obsolete-chunks')
 
 config.plugins.push(new HtmlWebpackPlugin({
-  title: 'Auto Data Direct - ADDSTACK **DEVELOPMENT**',
+  title: 'Auto Data Direct - ADD STACK **DEVELOPMENT**',
   template: 'index.html.ejs',
   inject: 'body',
   filename: 'index.html'

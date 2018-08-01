@@ -1,16 +1,19 @@
 {
-  "UserForm": {
-    "userId": "User Id",
-    "date": "Last Updated",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "age": "Age",
-    "phone": "Phone Number",
-    "address": "Address",
-    "update": "UPDATE",
-    "cancel": "Cancel"
+  "UserDetail": {
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "disableUser": "Disable",
+    "cancel": "Cancel",
+    "userName": "User Name",
+    "email": "Email Address",
+    "active": "Is Active?",
+    "phone": "Phone",
+    "fax": "Fax",
+    "created": "Created",
+    "lastLogin": "Last Login",
+    "lastChangedPassword": "Last Changed Password"
   },
-  "LoadingIcon": {
-    "loading": "Loading"
+  "UserManifestFilter": {
+    "search": "search by name, username, and email"
   }
 }

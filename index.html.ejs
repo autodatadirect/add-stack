@@ -6,22 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../../favicon.ico">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,100" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="https://static2.add123.com/cdn/add-style/latest/add-style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://static.add123.com/cdn/add-style/latest/add-style.min.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script src="https://static.add123.com/cdn/babel/polyfill/6.26.0/polyfill.min.js"></script>
 
     <% if (htmlWebpackPlugin.options.isProd) { %>
-      <script src="https://static.add123.com/cdn/react/16.2.0/react.min.js"></script>
+      <script src="https://static.add123.com/cdn/react/15.6.1/react.min.js"></script>
+      <script src="https://static.add123.com/cdn/react/15.6.1/react-dom.min.js"></script>
     <% } else { %>
-      <script src="https://static.add123.com/cdn/react/16.2.0/react.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
     <% } %>
-
-    <script src="https://static.add123.com/cdn/react/16.2.0/react-dom.min.js"></script>
-    <!-- <script src="https://static.add123.com/cdn/addnav/latest/addnav.js"></script> -->
-    <script>
-      //window.ADD123.getSession();
-      //window.ADD123.setApplication({appName: 'add-stack'});
-    </script>
+    
+    <script src="https://static.add123.com/cdn/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://static.add123.com/cdn/addnav/latest/addnav.js"></script>
   </head>
   <body>
     <div id="app"></div>

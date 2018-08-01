@@ -22,7 +22,7 @@ describe('setting Icon correctly', function () {
 
   it('should return span with correct className', function () {
     component = shallow(Icon({type: 'account'}))
-    expect(component.hasClass('stackicon')).toBe(true)
-    expect(component.hasClass('stackicon-account')).toBe(true)
+    expect(component.hasClass('addstackicon')).toBe(true)
+    expect(component.hasClass('addstackicon-account')).toBe(true)
   })
 })
