@@ -3,9 +3,9 @@ module.exports = {
       './images/account.svg',
       './images/close.svg'
     ],
-    'fontName': 'stackicons',
-    'classPrefix': 'stackicon-',
-    'baseClass': 'stackicon',
+    'fontName': 'addstackicons',
+    'classPrefix': 'addstackicon-',
+    'baseClass': 'addstackicon',
     'fixedWidth': true,
     'types': ['ttf']
   }

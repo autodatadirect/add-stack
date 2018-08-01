@@ -5,7 +5,7 @@ var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 var webpack = require('webpack')
 
 config.plugins.push(new HtmlWebpackPlugin({
-  title: 'Auto Data Direct - ADDSTACK',
+  title: 'Auto Data Direct - ADD STACK',
   template: 'index.html.ejs',
   inject: 'body',
   filename: 'index.html',

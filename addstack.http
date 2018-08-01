@@ -1,0 +1,21 @@
+@host = <replace-with-your-host-url>
+@sessionId = <replace-with-session-id>
+
+########################################################################
+#  Get All Users
+#
+POST https://{{host}}/api/users HTTP/1.1
+content-type: application/json
+
+{
+  "page": 0,
+  "pageSize": 10,
+  "search": null,
+  "sorts": [{"id": "id", "isAsc": true}]
+}
+
+########################################################################
+#  Get User
+#
+GET https://{{host}}/api/users/3 HTTP/1.1
+content-type: application/json

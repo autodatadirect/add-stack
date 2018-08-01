@@ -1,25 +1,52 @@
-@mixin pulse() {
-  animation-name: pulse;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+@import "../../style/variables.scss";
+
+$outer-ring: #681cfd;
+$middle-ring: #f701c5;
+$inner-ring: #f9cd25;
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .addstack-loading-icon {
-	font-size: 200px;
-	text-align: center;
-	margin-top: 200px;
-	@include pulse();
-}
+  display: block;
+  position: relative;
+  width: 65px;
+  height: 65px;
+  margin: 50px auto 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: $outer-ring;
+  animation: loading-spin 2s linear infinite;
 
-@-webkit-keyframes pulse {
-    0% { -webkit-transform: scale(1); }
-    50% { -webkit-transform: scale(1.1); }
-    100% { -webkit-transform: scale(1); }
-}
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $middle-ring;
+    animation: loading-spin 3s linear infinite;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $inner-ring;
+    animation: loading-spin 1.5s linear infinite;
+  }
 }
