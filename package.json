@@ -23,7 +23,7 @@
     "@storybook/react": "3.4.8",
     "addon-redux": "0.1.2",
     "addstrap": "1.1.0",
-    "async-ops": "1.0.2",
+    "async-ops": "1.1.2",
     "babel-core": "6.26.3",
     "babel-eslint": "8.2.6",
     "babel-loader": "7.1.5",

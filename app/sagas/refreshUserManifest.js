@@ -1,7 +1,7 @@
 import { put, all, throttle, call } from 'redux-saga/effects'
 import { setPage, setCount, setError } from 'redux-manifest'
 import * as serviceTypes from '../constants/serviceTypes'
-import { getOperation } from 'async-ops'
+import { callOperation } from 'async-ops'
 import { isRefreshCount, isRefreshData } from '../utils/refreshDataMatch'
 import { get } from 'lodash'
 import * as manifestNames from '../constants/manifestNames'
@@ -30,7 +30,7 @@ const buildFilter = (actionFilter, mode) => {
 function * refreshData (action) {
   const filter = buildFilter(action.filter, 'DATA')
   try {
-    const resp = yield call(getOperation(serviceTypes.GET_USERS), filter)
+    const resp = yield call(callOperation, serviceTypes.GET_USERS, filter)
     const users = get(resp, 'users')
     yield put(setPage(action.manifestName, users))
   } catch (err) {
@@ -41,7 +41,7 @@ function * refreshData (action) {
 function * refreshCount (action) {
   const filter = buildFilter(action.filter, 'COUNT')
   try {
-    const resp = yield call(getOperation(serviceTypes.GET_USERS), filter)
+    const resp = yield call(callOperation, serviceTypes.GET_USERS, filter)
     const count = get(resp, 'count')
     yield put(setCount(action.manifestName, count))
   } catch (err) {
