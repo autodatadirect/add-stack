@@ -8,7 +8,7 @@ import 'redux-manifest/dist/styles.css'
 const Users = () =>
   <div className='mt-2'>
     <UserManifestFilter />
-    <Manifest name={NAME} definition={definition} />
+    <Manifest autoLoad={false} name={NAME} definition={definition} />
   </div>
 
 export default Users
