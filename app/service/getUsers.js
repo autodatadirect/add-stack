@@ -1,5 +1,5 @@
 import { register } from 'async-ops'
-import { defaultOptions, throwHttpStatusErrors, deserializeJsonResponse } from '../utils/fetch'
+import { defaultOptions, throwExceptionErrors, deserializeJsonResponse } from '../utils/fetch'
 import { GET_USERS } from '../constants/serviceTypes'
 
 const url = '/api/users'
@@ -11,9 +11,10 @@ export const service = async filter => {
       ...filter
     })
   }
-  const users = await window.fetch(url, options)
-  throwHttpStatusErrors(users)
-  return deserializeJsonResponse(users)
+  const response = await window.fetch(url, options)
+  const users = deserializeJsonResponse(response)
+  throwExceptionErrors(users)
+  return users
 }
 
 const mock = request => Promise.resolve({
@@ -44,4 +45,4 @@ const mock = request => Promise.resolve({
   count: 3
 })
 
-export default register(GET_USERS, service, mock)
+register(GET_USERS, service, mock)

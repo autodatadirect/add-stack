@@ -3,10 +3,12 @@ export const defaultOptions = {
   credentials: 'same-origin'
 }
 
-export const throwHttpStatusErrors = response => {
-  if (response.status >= 200 && response.status < 300) return
-  var error = new Error(response.statusText)
-  error.response = response
+export const throwExceptionErrors = response => {
+  if (!response || !response.code) return
+  const error = new Error(response.code)
+  error.code = response.code || ''
+  error.message = response.message || ''
+  error.values = response.values || []
   throw error
 }
 

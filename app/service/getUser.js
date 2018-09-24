@@ -1,5 +1,5 @@
 import { register } from 'async-ops'
-import { defaultOptions, throwHttpStatusErrors, deserializeJsonResponse } from '../utils/fetch'
+import { defaultOptions, throwExceptionErrors, deserializeJsonResponse } from '../utils/fetch'
 import { GET_USER } from '../constants/serviceTypes'
 
 export const service = async userId => {
@@ -8,9 +8,10 @@ export const service = async userId => {
     ...defaultOptions,
     method: 'GET'
   }
-  const users = await window.fetch(url, options)
-  throwHttpStatusErrors(users)
-  return deserializeJsonResponse(users)
+  const response = await window.fetch(url, options)
+  const user = deserializeJsonResponse(response)
+  throwExceptionErrors(user)
+  return user
 }
 
 const mock = request => Promise.resolve({
@@ -29,4 +30,4 @@ const mock = request => Promise.resolve({
   }
 })
 
-export default register(GET_USER, service, mock)
+register(GET_USER, service, mock)
